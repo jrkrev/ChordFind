@@ -85,9 +85,17 @@ public class ChordAnalysis
                     {
                         isSharpNinth = true;
                         // Disallow simultaneous minor third and sharp ninth.
-                        // Minor third takes precedence.
-                        if (isMinorThird)
-                            isNinth = false;
+                        // Minor third takes precedence unless there's already
+                        // a major third.
+                        if (isMinorThird && isMajorThird)
+                        {
+                            isMinorThird = false;
+                        }
+                        else
+                            if (isMinorThird && !isMajorThird)
+                            {
+                                isNinth = false;
+                            }
                     }
             }
                       
@@ -113,11 +121,10 @@ public class ChordAnalysis
         
         // Determine the name of the chord itself.
         
-        // Chords without higher extensions.
-        if(!isThirteenthOrSixth&& !isEleventh && !isNinth)
-        {
-            // Basic chords.
-            if(!isSeventh)
+        
+        
+            // Chords without higher extensions.
+            if(!isSeventh && !isNinth && !isEleventh && !isThirteenthOrSixth)
             {
                 // Power chords & altered power chords
                 if(!isThird)
@@ -165,8 +172,7 @@ public class ChordAnalysis
                 }
                     
             }
-            // These are chords with seventh intervals but without
-            // any higher extensions on top of them.
+            // These are chords with higher intervals.
             else
             {
                 if(isMajorThird && isMinorSeventh)
@@ -185,17 +191,19 @@ public class ChordAnalysis
                             isMajorThird && isMajorSeventh)
                         chordSuffix.append("7");
                 
-                if(isFlatFifth)
+                if(isFlatFifth && isThird)
                     chordSuffix.append("b5");
                 else
-                    if (isSharpFifth)
+                    if (isSharpFifth && isThird)
                         chordSuffix.append("#5");
                 
-                
+                // If third is missing, generate multiple possible chords
+                // depending on type of third is omitted.
                 if (!isThird)
                 {
+                    chordSuffix = new StringBuilder();
                     if (isMinorSeventh)
-                        chordSuffix.append("m7|7");
+                        chordSuffix.append("[7|m7]");
                     if (isMajorSeventh)
                         chordSuffix.append("M7");
                     
@@ -207,15 +215,90 @@ public class ChordAnalysis
                         else
                             if (isSharpFifth)
                                 chordSuffix.append("#5");
-                    }
-                    
+                    }                
                 }
+                
+                if(isNinth)
+                {
+                    if (isThird)
+                    {
+                        if(isMajorThird && isMajorSeventh)
+                        {
+                            if(isFlatNinth)
+                                chordSuffix.append("addb9");
+                            else
+                                if(isSharpNinth)
+                                    chordSuffix.append("add#9");
+                                else
+                                    chordSuffix.append("add9");
+                        }
+                        else                     
+                        {
+                            // We HAVE to rebuild our chord, to change 7 to 9
+                            // and possibly M/m to sus2/sus4. Rebuild from scratch.
+                            chordSuffix = new StringBuilder();
+
+                            // Dominant Chord
+                            if(isMajorThird)
+                            {
+                                if(isFlatNinth)
+                                    chordSuffix.append("7b9");
+                                else
+                                    if(isSharpNinth)
+                                        chordSuffix.append("7#9");
+                                    else
+                                        chordSuffix.append("9");
+                            }
+                            else 
+                                if(isMinorThird)
+                                {
+                                    chordSuffix.append("m");
+
+                                    if (isMajorSeventh)
+                                        chordSuffix.append("M7");
+
+                                    if(isFlatNinth)
+                                        chordSuffix.append("b9");
+                                    else
+                                        chordSuffix.append("9");
+                                }
+
+                            if(isFlatFifth)
+                                chordSuffix.append("b5");
+                            else
+                                if (isSharpFifth)
+                                    chordSuffix.append("#5");
+                        }
+                    }
+                    else
+                    {
+                        chordSuffix = new StringBuilder();
+                        
+                        if(isMinorThird)
+                            chordSuffix.append("m");
+                                
+                        if(isFlatNinth)
+                            chordSuffix.append("7b9");
+                        else
+                            if(isSharpNinth)
+                                chordSuffix.append("7#9");
+                            else
+                                chordSuffix.append("9");
+                        
+                        if(isFlatFifth)
+                                chordSuffix.append("b5");
+                            else
+                                if (isSharpFifth)
+                                    chordSuffix.append("#5");
+                    }
+                }
+                
                 
 
                     
             }
                 
-        }
+        
         chordResults.add(ChromaticScale.getNoteName(rNote) + chordSuffix.toString());
     }
     
