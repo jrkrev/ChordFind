@@ -1,8 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/****************************************************************
+*   ChordFind - an application to determine possible chords     *
+*   from a sequence of notes.                                   *
+*****************************************************************/
 package ChordFind;
 
 /**
@@ -14,7 +13,6 @@ public class ChromaticScale
     private static final String[] NOTES = new String[]
         {"A", "A#/Bb", "B", "C", "C#/Db","D", 
         "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab"};
-
     
     public static int getNoteIndex(String note)
     {
@@ -39,17 +37,14 @@ public class ChromaticScale
         for (int count = 0; count < 12; count++)
         {
             interval++;
-            currentIndex ++;
-            
+            currentIndex ++;         
+            // Loop back to stay in range.
             if(currentIndex == 12)
                 currentIndex = 0;
             
             if(currentIndex == noteTwoIndex)
-                break;
-            
-            
-        }
-            
+                break;        
+        }          
         return interval;
     }
 }

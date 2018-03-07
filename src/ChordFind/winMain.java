@@ -1,8 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/****************************************************************
+*   ChordFind - an application to determine possible chords     *
+*   from a sequence of notes.                                   *
+*****************************************************************/
 package ChordFind;
 
 import javax.swing.JOptionPane;
@@ -30,80 +29,32 @@ public class winMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        lstNoteOne = new javax.swing.JList<>();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        btnClearTwo = new javax.swing.JButton();
+        btnClearThree = new javax.swing.JButton();
+        btnClearFour = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        lstNoteFour = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         lstNoteThree = new javax.swing.JList<>();
         lstNote2 = new javax.swing.JScrollPane();
         lstNoteTwo = new javax.swing.JList<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        lstNoteFour = new javax.swing.JList<>();
-        btnDetermineChord = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstNoteOne = new javax.swing.JList<>();
         btnClearOne = new javax.swing.JButton();
-        btnClearTwo = new javax.swing.JButton();
-        btnClearFour = new javax.swing.JButton();
-        btnClearThree = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnDetermineChord = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lstNoteOne.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(lstNoteOne);
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-        lstNoteThree.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(lstNoteThree);
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
-        lstNoteTwo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        lstNote2.setViewportView(lstNoteTwo);
-
-        lstNoteFour.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(lstNoteFour);
-
-        btnDetermineChord.setText("Determine Chord");
-        btnDetermineChord.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDetermineChordActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Root*");
-
-        jLabel2.setText("Third");
-
-        jLabel3.setText("Fifth");
-
-        jLabel4.setText("Seventh / Ninth");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("ChordFind - Enter a chord with 4 notes or less");
-
-        btnClearOne.setText("clear");
-        btnClearOne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearOneActionPerformed(evt);
-            }
-        });
-
+        btnClearTwo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnClearTwo.setText("clear");
         btnClearTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,13 +62,7 @@ public class winMain extends javax.swing.JFrame {
             }
         });
 
-        btnClearFour.setText("clear");
-        btnClearFour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearFourActionPerformed(evt);
-            }
-        });
-
+        btnClearThree.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnClearThree.setText("clear");
         btnClearThree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,91 +70,173 @@ public class winMain extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDetermineChord)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(74, 74, 74)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnClearOne)
-                                .addGap(39, 39, 39)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lstNote2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(btnClearTwo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(17, 17, 17))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnClearThree)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnClearFour)
-                                .addGap(52, 52, 52)))))
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel5)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lstNote2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClearOne)
-                    .addComponent(btnClearFour)
-                    .addComponent(btnClearTwo)
+        btnClearFour.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnClearFour.setText("clear");
+        btnClearFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearFourActionPerformed(evt);
+            }
+        });
+
+        lstNoteFour.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lstNoteFour.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(lstNoteFour);
+
+        lstNoteThree.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lstNoteThree.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lstNoteThree);
+
+        lstNoteTwo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lstNoteTwo.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        lstNote2.setViewportView(lstNoteTwo);
+
+        lstNoteOne.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lstNoteOne.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(lstNoteOne);
+
+        btnClearOne.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnClearOne.setText("clear");
+        btnClearOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearOneActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClearOne))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lstNote2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClearTwo))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClearThree))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(btnDetermineChord)
-                .addGap(32, 32, 32))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClearFour))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lstNote2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClearOne)
+                    .addComponent(btnClearTwo)
+                    .addComponent(btnClearThree)
+                    .addComponent(btnClearFour))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Rage Italic", 1, 52)); // NOI18N
+        jLabel5.setText("ChordFind");
+        jPanel2.add(jLabel5);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnDetermineChord.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnDetermineChord.setText("Determine Chord");
+        btnDetermineChord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDetermineChordActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnDetermineChord);
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDetermineChordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetermineChordActionPerformed
-        // TODO add your handling code here:
         int noteOneIndex = ChromaticScale.getNoteIndex(lstNoteOne.getSelectedValue());
         int noteTwoIndex = ChromaticScale.getNoteIndex(lstNoteTwo.getSelectedValue());
         int noteThreeIndex = ChromaticScale.getNoteIndex(lstNoteThree.getSelectedValue());
         int noteFourIndex = ChromaticScale.getNoteIndex(lstNoteFour.getSelectedValue());
-             
-        ChordAnalysis cA = new ChordAnalysis();
-        cA.analyze(noteOneIndex, noteTwoIndex, noteThreeIndex, noteFourIndex);
-        JOptionPane.showMessageDialog(rootPane, cA.chordResults.toString());
         
+        ChordAnalysis analysis;
+        
+        if (noteOneIndex!=12)
+        {
+            analysis = new ChordAnalysis(noteOneIndex, noteTwoIndex, 
+                    noteThreeIndex, noteFourIndex);
+            JOptionPane.showMessageDialog(rootPane, analysis.getChordResults());
+        }
+        
+        if (noteTwoIndex!=12)
+        {
+            analysis = new ChordAnalysis(noteTwoIndex, noteOneIndex, 
+                    noteOneIndex, noteFourIndex);
+            JOptionPane.showMessageDialog(rootPane, analysis.getChordResults());
+        }
+        
+        if (noteThreeIndex!=12)
+        {
+            analysis = new ChordAnalysis(noteThreeIndex, noteTwoIndex, 
+                    noteThreeIndex, noteOneIndex);
+            JOptionPane.showMessageDialog(rootPane, analysis.getChordResults());
+        }
+        
+        if (noteFourIndex!=12)
+        {
+            analysis = new ChordAnalysis(noteFourIndex, noteTwoIndex, 
+                    noteThreeIndex, noteFourIndex);
+            JOptionPane.showMessageDialog(rootPane, analysis.getChordResults());
+        }    
     }//GEN-LAST:event_btnDetermineChordActionPerformed
 
     private void btnClearOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearOneActionPerformed
@@ -269,11 +296,11 @@ public class winMain extends javax.swing.JFrame {
     private javax.swing.JButton btnClearThree;
     private javax.swing.JButton btnClearTwo;
     private javax.swing.JButton btnDetermineChord;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
